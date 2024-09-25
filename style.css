@@ -1,11 +1,18 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-body{
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
     height: 100%;
     margin: 0;
 }
+
 .containerBody {
-    
     display: flex;
     justify-content: space-between;
     height: 100vh;
@@ -17,10 +24,12 @@ body{
     background-image: url('images/bg-main-desktop.png');
     background-size: cover;
 }
-.cards{
+
+.cards {
     margin: 5em;
 }
-.cardFront{
+
+.cardFront {
     background-image: url('images/bg-card-front.png');
     background-size: cover;
     border-radius: 10px;
@@ -28,19 +37,20 @@ body{
     height: 180px;
     display: flex;
     flex-direction: column;
-    color:white;
+    color: white;
     padding: 1em;
-
 }
 
-.cardInfo{
+.cardInfo {
     margin-top: 2em;
 }
-.othercardInfo{
+
+.othercardInfo {
     display: flex;
     justify-content: space-between;
 }
-.cardBack{
+
+.cardBack {
     background-image: url('images/bg-card-back.png');
     background-size: cover;
     border-radius: 10px;
@@ -50,66 +60,70 @@ body{
     margin-top: 2em;
     margin-left: 4em;
 }
-.cvcText{
+
+.cvcText {
     position: absolute;
-    margin-top: 4em ;
+    margin-top: 4em;
     margin-left: 17em;
     color: white;
 }
- 
 
 .form {
     position: relative;
     max-width: 350px;
     margin: 9em 20em;
-   
+
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
-    
+
 }
-label{
-    color:  hsl(278, 68%, 11%) ;
+
+label {
+    color: hsl(278, 68%, 11%);
     text-transform: uppercase;
 }
-input, select{
+
+input,
+select {
     padding: 0.5rem;
     margin-bottom: 2em;
     font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-.expiryCvcCont{
+
+.expiryCvcCont {
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* flex-direction: row; */
-    /* gap: 1em; */
-    
+
 }
-.expiryCvcCont input{
+
+.expiryCvcCont input {
     width: 30%;
 }
-.expiryInputs{
+
+.expiryInputs {
     display: flex;
     gap: 10px;
 }
-.allCvc input{
+
+.allCvc input {
     display: flex;
     gap: 10px;
     width: 80%;
 }
-button{
+
+button {
     padding: 1em;
-    background-color:hsl(278, 68%, 11%);
+    background-color: hsl(278, 68%, 11%);
     color: white;
     border: none;
     border-radius: 5px;
-} 
+}
 
-.successPage{
-  
+.successPage {
     display: none;
 
 }

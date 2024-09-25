@@ -2,15 +2,11 @@ document.getElementById('regForm').addEventListener('submit', function (event) {
 
     event.preventDefault();
     displayInputs();
-    
+
 });
 function displayInputs() {
-    let isValid = true; 
-
-
-
+    let isValid = true;
     // EERROR WARNINGS
-
     const userData = {};
     const cardNumberInput = document.getElementById('cardNumber');
     const warning3 = document.getElementById('warning3');
@@ -28,13 +24,13 @@ function displayInputs() {
     const inputContainer = cardNameInput.parentElement;
     const monthSelection = document.getElementById('months')
 
-// WARNINGS FOR CARDNAME
+    // WARNINGS FOR CARDNAME
     if (cardNameInput.value == "") {
         warning.textContent = "Please enter your full name";
         warning.style.display = "block";
         warning.style.color = "red";
         cardNameInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning, cardNameInput)
     }
     else if (!isNaN(cardNameInput.value)) {
@@ -42,16 +38,16 @@ function displayInputs() {
         warning1.style.display = "block";
         warning1.style.color = "red";
         cardNumberInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning1, cardNumberInput)
     }
-// WARNINGS FOR CARDNUMBER
+    // WARNINGS FOR CARDNUMBER
     if (cardNumberInput.value === "") {
         warning2.style.display = "block";
         warning2.style.color = "red";
         warning2.textContent = "Please enter your Card Number";
         cardNumberInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning2, cardNumberInput)
     }
     else if (cardNumberInput.value.length !== 3) {
@@ -59,7 +55,7 @@ function displayInputs() {
         warning3.style.display = "block";
         warning3.style.color = "red";
         cardNumberInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning3, cardNumberInput)
     }
     else if (isNaN(cardNumberInput.value)) {
@@ -67,16 +63,16 @@ function displayInputs() {
         warning4.style.display = "block";
         warning4.style.color = "red";
         cardNumberInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning4, cardNumberInput)
     }
-// WARNINGS FOR CARD EXPIRY YEAR
+    // WARNINGS FOR CARD EXPIRY YEAR
     if (cardYearInput.value === "") {
         warning7.style.display = "block";
         warning7.style.color = "red";
         warning7.textContent = "Can't be Blank";
         cardYearInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning7, cardYearInput)
     }
     else if (isNaN(cardYearInput.value)) {
@@ -84,7 +80,7 @@ function displayInputs() {
         warning5.style.display = "block";
         warning5.style.color = "red";
         cardYearInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning5, cardYearInput)
     }
     // WARNINGS FOR CARD CVC
@@ -93,20 +89,19 @@ function displayInputs() {
         warning8.style.color = "red";
         warning8.textContent = "Can't be Blank";
         cvcInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning8, cvcInput)
-
     }
     else if (isNaN(cvcInput.value)) {
         warning6.textContent = "Only numberss areeee allowed"
         warning6.style.display = "block";
         warning6.style.color = "red";
         cvcInput.style.border = "1px solid red";
-        isValid = false; 
+        isValid = false;
         hideErrorMessage(warning6, cvcInput)
     }
-
-   if (isValid){
+    // VALIDATION and FIELD MAPPING
+    if (isValid) {
         const fieldMapping = {
             'cardName': 'cardNameDisplay',
             'cardNumber': 'cardNumberDisplay',
@@ -114,32 +109,24 @@ function displayInputs() {
             'expiryYear': 'expiryYearDisplay',
             'cvc': 'cvcDisplay'
         };
-
-
         //   CHATGPT CODE
-
         for (const inputID in fieldMapping) {
             const inputValue = document.getElementById(inputID).value;
             console.log(inputValue)
             console.log(inputID)
             const displayElementID = fieldMapping[inputID];
             document.getElementById(displayElementID).textContent = inputValue;
-
         }
         document.getElementById('regForm').style.display = 'none';
         document.getElementById('successPage').style.display = 'block';
-
-
     }
-
 }
 function hideErrorMessage(errorMessage, inputField) {
     setTimeout(() => {
         errorMessage.style.display = "none";
         inputField.style.border = "";
     }, 2000)
-
 }
-document.getElementById ('btnReload').addEventListener('click',function() {
-    window.location.reload(); // This reloads the page
+document.getElementById('btnReload').addEventListener('click', function () {
+    window.location.reload();
 });
