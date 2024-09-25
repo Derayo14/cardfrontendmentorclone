@@ -33,13 +33,13 @@ function displayInputs() {
         isValid = false;
         hideErrorMessage(warning, cardNameInput)
     }
-    else if (!isNaN(cardNameInput.value)) {
+    else if (/\d/.test(cardNameInput.value)) {
         warning1.textContent = "Only letters are allowed"
         warning1.style.display = "block";
         warning1.style.color = "red";
-        cardNumberInput.style.border = "1px solid red";
+        cardNameInput.style.border = "1px solid red";
         isValid = false;
-        hideErrorMessage(warning1, cardNumberInput)
+        hideErrorMessage(warning1, cardNameInput)
     }
     // WARNINGS FOR CARDNUMBER
     if (cardNumberInput.value === "") {
